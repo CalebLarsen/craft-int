@@ -1,1 +1,1 @@
-My code as a work through [Crafting Interpreters](https://craftinginterpreters.com)
+My code as I work through [Crafting Interpreters](https://craftinginterpreters.com)

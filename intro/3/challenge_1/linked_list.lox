@@ -1,0 +1,27 @@
+class Node {
+	init(data) {
+		this.data = data;
+		this.next = nil;
+	}
+
+	print_tree() {
+		print this.data;
+		if (this.next) {
+			this.next.print_tree();
+		}
+	}
+
+	append(node){
+		if (this.next){
+			this.next.append(node);
+		} else {
+			this.next = node;
+		}
+	}
+}
+
+var root = Node(1);
+root.append(Node(2));
+root.append(Node(3));
+root.print_tree();
+root.next.print_tree();

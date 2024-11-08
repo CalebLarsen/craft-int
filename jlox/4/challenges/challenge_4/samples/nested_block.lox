@@ -1,0 +1,4 @@
+var abc = /*
+/*
+*/ Nesting broken;
+// */ Nesting works;

@@ -46,6 +46,8 @@ class Scanner {
       case '+': addToken(PLUS); break;
       case '*': addToken(STAR); break;
       case ';': addToken(SEMICOLON); break;
+      case '?': addToken(QUESTION); break;
+      case ':': addToken(COLON); break;
       case '!':
         addToken(match('=') ? BANG_EQUAL : BANG);
         break;
@@ -61,23 +63,6 @@ class Scanner {
       case '/':
         if (match('/')) {
           while (peek() != '\n' && !isAtEnd()) advance();
-        } else if (match('*')){
-          int startLine = line;
-          int layers = 1;
-          while (layers > 0) {
-            if (match('*') && match('/')) {
-              layers -= 1;
-            } else if (match('/') && match('*')) {
-              layers += 1;
-            } else if (isAtEnd()) {
-              Lox.error(startLine, "Unfinished block comment");
-              break;
-            } else if (match('\n')) {
-              line++;
-            } else {
-              advance();
-            }
-          }
         } else {
           addToken(SLASH);
         }

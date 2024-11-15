@@ -1,0 +1,11 @@
+plugins {
+  id 'application'
+}
+
+application {
+  mainClass = 'com.craftinginterpreters.lox.Lox'
+}
+
+run {
+  standardInput = System.in
+}
